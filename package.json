@@ -1,6 +1,6 @@
 {
-  "name": "@minimal-kit/starter-next-js",
-  "author": "Minimals",
+  "name": "starter-next-js",
+  "author": "SWA",
   "version": "5.7.0",
   "description": "Next Starter & JavaScript",
   "private": true,
