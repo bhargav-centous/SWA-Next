@@ -1,5 +1,16 @@
 import { paths } from 'src/routes/paths';
 
+let Host = ''
+
+// Check if running in development mode
+if (process.env.NODE_ENV === 'development') {
+  Host = 'http://localhost:3033/'
+}
+
+// Check if running on localhost
+if (process.env.NODE_HOST === 'localhost') {
+  Host = 'https://swa-next-ovil.vercel.app/'
+}
 // API
 // ----------------------------------------------------------------------
 
@@ -25,7 +36,7 @@ export const AMPLIFY_API = {
 export const AUTH0_API = {
   clientId: process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID,
   domain: process.env.NEXT_PUBLIC_AUTH0_DOMAIN,
-  callbackUrl: process.env.NEXT_PUBLIC_AUTH0_CALLBACK_URL,
+  callbackUrl: Host + process.env.NEXT_PUBLIC_AUTH0_CALLBACK_URL,
 };
 
 export const SUPABASE_API = {
